@@ -44,7 +44,7 @@
 
                     </td>
                     <td>{{$user->created_at->diffForHumans()}}</td>
-                    <td class="d-flex">
+                    <td class="d-flex justify-content-around ">
 
                         <form action="{{route('user.destroy' , $user->id) }}" method="POST">
                             @csrf

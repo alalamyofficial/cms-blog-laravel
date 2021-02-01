@@ -21,5 +21,19 @@ class BlogController extends Controller
 
     }
 
+    public function content($slug , Category $categories, Tag $tags , Post $posts){
+
+        $data = Post::where('slug',$slug)->get();
+        $data_category = $categories->orderBy('created_at','desc')->get();
+        $data_tags = $tags->orderBy('created_at','desc')->get();
+        $data_posts = $posts->orderBy('created_at','desc')->get();
+
+
+        return view('blog.content_post')->with('data_category',$data_category)->with('data_tags',$data_tags)
+        ->with('slug',$slug)->with('data',$data)->with('data_posts',$data_posts);
+
+
+    }
+
 
 }

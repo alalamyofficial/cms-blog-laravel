@@ -75,7 +75,7 @@
           
 
         <label>Content</label>
-        <textarea class="form-control" value="{{$post->content}}" style="height: 100px"  id="exampleFormControlTextarea1" name="content" rows="5" style="width: 400px">{{$post->content}}</textarea>
+        <textarea class="form-control" value="{{$post->content}}" style="height: 300px"  id="textarea" name="content" rows="5" style="width: 400px">{{$post->content}}</textarea>
             <br><br>
 
         <label>Upload Image</label>

@@ -14,6 +14,11 @@
   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
   <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/> --}}
   
+  <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>  -->
+
+  <!-- <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script> -->
+
 
   <!-- CSS Libraries -->
 
@@ -162,6 +167,7 @@
               </div>
             </div>
           </li>
+
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Notifications
@@ -220,6 +226,10 @@
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
+          </li>
+          <li>
+            <a class="btn btn-dark" href="/" target="_blank">View Website</a>
+
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{{asset('assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">

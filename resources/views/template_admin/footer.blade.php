@@ -1,10 +1,5 @@
 <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-        </div>
-        <div class="footer-right">
-          2.3.0
-        </div>
+  
       </footer>
     </div>
   </div>
@@ -21,7 +16,31 @@
   {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
   <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>  --}}
-  
+  <!-- <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script> -->
+
+  <!-- <script>
+    ClassicEditor
+        .create( document.querySelector( '#textarea' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> -->
+
+  <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    
+    tinymce.init({
+      selector: '#textarea',
+
+      init_instance_callback : function(editor) {
+      var freeTiny = document.querySelector('.mce-notification');
+      freeTiny.style.display = 'none';
+  }
+    
+   });
+
+    </script>
+
 
   <!-- JS Libraies -->
 

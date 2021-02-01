@@ -42,7 +42,7 @@
                     </td>
                 <td><img src="{{asset($post->image)}}" alt="{{$post->title}}" class="img-thumbnail" width="100px" height="120px"></td>
                 <td> {{$post->users->name}} </td>
-                <td>{{$post->content}}</td>
+                <td>{!!$post->content!!}</td>
                 <!-- <td>{{$post->created_at->diffForHumans()}}</td> -->
 
                 

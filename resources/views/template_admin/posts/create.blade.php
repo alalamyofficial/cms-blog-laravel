@@ -24,18 +24,20 @@
         
 @endif
 
-<div class="container">
-    <div class="row justify-content-center">
 
-        <form action="{{route('posts.store')}}" method="POST" style="background-color:white; padding:20px" enctype="multipart/form-data">
+
+<!-- <div class="container">
+    <div class="row"> -->
+
+        <form action="{{route('posts.store')}}" method="POST" style="background-color:#eef2f7; padding:20px" enctype="multipart/form-data">
         
             @csrf
             <div class="form-group">
               <label>Title</label>
-              <input type="text" class="form-control" style="width: 400px" name="title" required style="width: 400px"><br><br>
+              <input type="text" class="form-control"  name="title" required><br><br>
         
                 <label>Category</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="category_id" style="width: 400px">
+                <select class="form-control" id="exampleFormControlSelect1" name="category_id">
                     
                     <option value="" holder>Choose Category</option><br>
                     @foreach ($categories as $category)
@@ -57,11 +59,11 @@
                   
         
                 <label>Content</label>
-                <textarea class="form-control" style="height: 100px"  id="exampleFormControlTextarea1" name="content" rows="5" style="width: 400px"></textarea>
+                <textarea class="form-control" style="height:300px"  id="textarea" name="content" rows="5"></textarea>
                     <br><br>
         
                 <label>Upload Image</label>
-                <input type="file" class="form-control" style="width: 400px" name="image" required><br><br>
+                <input type="file" class="form-control" name="image" required><br><br>
 
                 <button class="btn btn-primary btn-lg">Create</button> 
         
@@ -70,8 +72,8 @@
         
         </form>
             
-    </div>
-</div>
+    <!-- </div>
+</div> -->
 
 
 

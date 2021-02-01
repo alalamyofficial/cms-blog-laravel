@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Category;
 use App\Post;
+use App\Tag;
 
 class User extends Authenticatable
 {
@@ -48,5 +49,7 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
+
+
 
 }

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Post;
+use App\User;
 
 class Tag extends Model
 {
@@ -19,5 +20,6 @@ class Tag extends Model
         return $this->belongsToMany('App\Post');
 
     }
+
 
 }
