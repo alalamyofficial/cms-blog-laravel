@@ -14,10 +14,12 @@
   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
   <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/> --}}
   
-  <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <!-- <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
   <!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>  -->
 
   <!-- <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script> -->
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 
 
   <!-- CSS Libraries -->

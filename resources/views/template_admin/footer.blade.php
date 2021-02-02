@@ -17,6 +17,8 @@
   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
   <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>  --}}
   <!-- <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script> -->
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 
   <!-- <script>
     ClassicEditor
@@ -24,9 +26,13 @@
         .catch( error => {
             console.error( error );
         } );
-</script> -->
+  </script> -->
 
-  <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+      <script>
+            CKEDITOR.replace( 'textarea' );
+      </script>
+
+  <!-- <script src="https://cdn.tiny.cloud/1/hsblu0xmouvkkdx14zshleddizy6m0ybjfboidilbkism1eb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
     
     tinymce.init({
@@ -35,7 +41,7 @@
       init_instance_callback : function(editor) {
       var freeTiny = document.querySelector('.mce-notification');
       freeTiny.style.display = 'none';
-  }
+  } -->
     
    });
 

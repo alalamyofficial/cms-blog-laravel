@@ -13,8 +13,9 @@ class BlogController extends Controller
     public function index(Post $posts, Category $categories, Tag $tags){
 
         $data = $posts->orderBy('created_at','desc')->get();
-        $data_category = $categories->orderBy('created_at','desc')->get();
-        $data_tags = $tags->orderBy('created_at','desc')->get();
+        $data_category = $categories->orderBy('created_at','desc')->take(5)->get();
+        // $data_category = $categories->lateset()->take(5)->get(); or
+        $data_tags = $tags->orderBy('created_at','desc')->take(5)->get();
 
 
         return view('blog')->with('data',$data)->with('data_category',$data_category)->with('data_tags',$data_tags);
@@ -33,6 +34,26 @@ class BlogController extends Controller
         ->with('slug',$slug)->with('data',$data)->with('data_posts',$data_posts);
 
 
+    }
+
+    public function list_blog(Category $categories, Tag $tags){
+
+        $category_widget = Category::all();
+
+        $data_category = $categories->orderBy('created_at','desc')->get();
+        $data_tags = $tags->orderBy('created_at','desc')->get();
+
+    	$data = Post::latest()->paginate(5);
+        return view('blog.list_post')->with('data',$data)->with('category_widget',$category_widget)
+        ->with('data_category',$data_category)->with('data_tags',$data_tags);
+
+    }
+
+    public function list_category(category $category){
+        $category_widget = Category::all();
+
+        $data = $category->posts()->paginate(6);
+        return view('blog.list_post')->with('data',$data)->with('category_widget',$category_widget);
     }
 
 

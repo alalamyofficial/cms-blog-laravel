@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Post;
 
 class Category extends Model
 {
@@ -12,4 +13,11 @@ class Category extends Model
 
         'name','slug'
     ];
+
+    public function posts(){
+
+        return $this->hasMany('App\Post');
+
+
+    }
 }
