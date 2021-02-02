@@ -27,7 +27,7 @@
                     <h4>Posts</h4>
                   </div>
                   <div class="card-body">
-                        543543
+                      {{$num_of_posts->count()}}
                 </div>
                 </div>
               </div>
@@ -35,14 +35,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-warning">
-                  <i class="far fa-file"></i>
+                  <i class="fa fa-tag fa-2x" style="color:white"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Reports</h4>
+                    <h4>Tags</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                       {{$num_of_tags->count()}}
                   </div>
                 </div>
               </div>
@@ -50,14 +50,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-success">
-                  <i class="fas fa-circle"></i>
+                  <i class="fa fa-list-alt fa-2x" style="color:white"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Online Users</h4>
+                    <h4>Categories</h4>
                   </div>
                   <div class="card-body">
-                    47
+                      {{$num_of_categories->count()}} 
                   </div>
                 </div>
               </div>

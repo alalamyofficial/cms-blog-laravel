@@ -21,9 +21,9 @@ Route::get('/', 'BlogController@index');
 //     return view('blog.content_post');
 // });
 
-Route::get('/post/{slug}','BlogController@content')->name('postContent')->middleware('auth');
+Route::get('/post/{slug}','BlogController@content')->name('postContent');
 
-Route::get('/list-post','BlogController@list_blog')->name('listBlog')->middleware('auth');
+Route::get('/list-post','BlogController@list_blog')->name('listBlog');
 
 
 Auth::routes();

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
+use App\Post;
+use App\Tag;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -25,6 +29,16 @@ class HomeController extends Controller
     public function index()
     {
         // return view('template_admin/home');
-        return view('home');
+        $num_of_posts = Post::all();
+        $num_of_categories = Category::all();
+        $num_of_tags = Tag::all();
+        $num_of_users = User::all();
+
+        return view('home')->with('num_of_posts',$num_of_posts)
+        ->with('num_of_categories',$num_of_categories)
+        ->with('num_of_tags',$num_of_tags)
+        ->with('num_of_users',$num_of_users);
     }
+
+
 }
