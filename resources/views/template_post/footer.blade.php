@@ -24,7 +24,7 @@
 						<div class="category-widget">
 							<ul>
                                 @foreach($data_category as $category)
-                                    <li><a href="#">{{$category->name}} <span>451</span></a></li>
+                                    <li><a href="{{route('listCategories', $category->slug)}}">{{$category->name}} <span>451</span></a></li>
                                 @endforeach
 							</ul>
 						</div>

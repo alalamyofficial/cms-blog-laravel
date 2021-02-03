@@ -20,4 +20,13 @@ class Category extends Model
 
 
     }
+
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
+
+        //this instread of Post::find($id) or Post::find($slug)
+    }
+
 }

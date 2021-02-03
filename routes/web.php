@@ -25,6 +25,8 @@ Route::get('/post/{slug}','BlogController@content')->name('postContent');
 
 Route::get('/list-post','BlogController@list_blog')->name('listBlog');
 
+Route::get('/category/{categories}','BlogController@list_category')->name('listCategories');
+
 
 Auth::routes();
 

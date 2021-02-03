@@ -49,11 +49,11 @@ class BlogController extends Controller
 
     }
 
-    public function list_category(category $category){
-        $category_widget = Category::all();
-
-        $data = $category->posts()->paginate(6);
-        return view('blog.list_post')->with('data',$data)->with('category_widget',$category_widget);
+    public function list_category(Category $categories , Tag $tags){
+        $data_category = Category::all();
+        $data_tags = $tags->orderBy('created_at','desc')->get();
+        $data = $categories->posts()->paginate(6);
+        return view('blog.list_post')->with('data',$data)->with('data_category',$data_category)->with('data_tags',$data_tags);
     }
 
 

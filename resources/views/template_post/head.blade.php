@@ -78,12 +78,12 @@
 					<!-- nav -->
 					<ul class="nav-menu">
 						<li class="has-dropdown">
-							<a href="index.html">Categories</a>
+							<a href="">Categories</a>
 							<div class="dropdown">
 								<div class="dropdown-body">
 									<ul class="dropdown-list">
 									@foreach($data_category as $category)
-										<li><a href="category.html">{{$category->name}}</a></li>
+										<li><a href="{{route('listCategories', $category->slug)}}">{{$category->name}}</a></li>
 									@endforeach	
 									</ul>
 								</div>
