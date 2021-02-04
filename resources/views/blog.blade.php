@@ -86,11 +86,11 @@
 							<div class="post">
 								<a class="post-img" href="{{route('postContent' ,  $post->slug )}}"><img src="{{$post->image}}" alt="" style="height: 300px"></a>
 								<div class="post-body">
-                                    <h2 class="post-title"><a href="blog-post.html">{{$post->title}}</a></h2>
+                                    <h2 class="post-title"><a href="{{route('postContent' ,  $post->slug )}}">{{$post->title}}</a></h2>
 									<div class="post-category">
 										<a href="category.html">{{$post->category->name}}</a>
 									</div>
-									<h4 class="post-content"><a href="blog-post.html">{!!$post->content!!}</a></h4>
+									
 									<ul class="post-meta">
 										<li><a href="author.html">{{$post->users->name}}</a></li>
 										<li>{{$post->created_at->diffForHumans()}}</li>

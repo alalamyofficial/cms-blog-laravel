@@ -56,5 +56,37 @@ class BlogController extends Controller
         return view('blog.list_post')->with('data',$data)->with('data_category',$data_category)->with('data_tags',$data_tags);
     }
 
+    public function search(Request $request, Category $categories , Tag $tags){
+        $data_category = Category::all();
+        $data_tags = $tags->orderBy('created_at','desc')->get();
+        // $data = Post::query()->where('title', $request->title)->orWhere('title','like','%'.$request->title.'%')->paginate(6);
+        
+            // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $data = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('content', 'LIKE', "%{$search}%")
+            ->paginate(6);
+            
+        if(!$data){
+
+            return view('/');
+
+        }else{
+
+                return view('blog.list_post')->with('data',$data)->with('data_category',$data_category)->with('data_tags',$data_tags);
+
+        }
+
+
+   
+    }
+
+    public function getRandomPost(){
+        $post = Post::inRandomOrder()->first();
+        return redirect()->route('posts.show', ["id" => $post->id]);
+    }
 
 }

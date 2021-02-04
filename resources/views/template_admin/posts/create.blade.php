@@ -62,8 +62,15 @@
                 <textarea class="form-control" style="height:300px"  id="textarea" name="content" rows="5"></textarea>
                     <br><br>
         
-                <label>Upload Image</label>
-                <input type="file" class="form-control" name="image" required><br><br>
+                <!-- <label>Upload Image</label>
+                <input type="file" class="form-control" name="image" required><br><br> -->
+
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="inputGroupFile04">
+                        <label class="custom-file-label" for="inputGroupFile04">Upload Image</label>
+                    </div>
+                </div><br><br>
 
                 <button class="btn btn-primary btn-lg">Create</button> 
         

@@ -7,6 +7,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+	<meta name="description" content=""/>
+	<!-- facebook -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+
+	<!-- Twitter -->
+
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="">
+	<meta name="twitter:card" content="">
+
+
 	<title>Laravel Blog</title>
 
 	<!-- Google font -->
@@ -59,8 +74,8 @@
 						<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						<button class="search-btn"><i class="fa fa-search"></i></button>
 						<div id="nav-search">
-							<form>
-								<input class="input" name="search" placeholder="Enter your search...">
+							<form method="get" action="{{route('blog.search')}}">
+								<input class="input" name="search" placeholder="Enter your search..." required>
 							</form>
 							<button class="nav-close search-close">
 								<span></span>

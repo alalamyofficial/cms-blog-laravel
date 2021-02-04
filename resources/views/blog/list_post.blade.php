@@ -21,7 +21,6 @@
 								<li><a href="author.html">{{$post->users->name}}</a></li>
 								<li>{{$post->created_at->diffForHumans()}}</li>
 							</ul>
-							<p> {!!$post->content!!} </p>
 						</div>
 					</div>
                     @endforeach
