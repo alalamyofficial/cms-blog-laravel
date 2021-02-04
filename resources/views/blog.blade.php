@@ -10,53 +10,58 @@
 			<div id="hot-post" class="row hot-post">
 				<div class="col-md-8 hot-post-left">
 					<!-- post -->
+					@foreach($randomPost1 as $randPost)
 					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/hot-post-1.jpg')}}" alt=""></a>
+						<a class="post-img" href="{{route('postContent' ,  $randPost->slug )}}"><img src="{{$randPost->image}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
+								<a href="category.html">{{$randPost->category->name}}</a>
 							</div>
-							<h3 class="post-title title-lg"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+							<h3 class="post-title title-lg"><a href="{{route('postContent' ,  $randPost->slug )}}">{{$randPost->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
+								<li><a href="author.html">{{$randPost->users->name}}</a></li>
+								<li>{{$randPost->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
 					</div>
+					@endforeach
 					<!-- /post -->
 				</div>
 				<div class="col-md-4 hot-post-right">
 					<!-- post -->
+					@foreach($randomPost2 as $randPost)
 					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/hot-post-2.jpg')}}" alt=""></a>
+						<a class="post-img" href="{{route('postContent' ,  $randPost->slug )}}"><img src="{{$randPost->image}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
+								<a href="category.html">{{$randPost->category->name}}</a>
 							</div>
-							<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
+							<h3 class="post-title"><a href="{{route('postContent' ,  $randPost->slug )}}">{{$randPost->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
+								<li><a href="author.html">{{$randPost->users->name}}</a></li>
+								<li>{{$randPost->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
 					</div>
+					@endforeach
 					<!-- /post -->
 
 					<!-- post -->
+					@foreach($randomPost3 as $randPost)
 					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/hot-post-3.jpg')}}" alt=""></a>
+						<a class="post-img" href="{{route('postContent' ,  $randPost->slug )}}"><img src="{{$randPost->image}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">
-								<a href="category.html">Fashion</a>
-								<a href="category.html">Lifestyle</a>
+								<a href="category.html">{{$randPost->category->name}}</a>
 							</div>
-							<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
+							<h3 class="post-title"><a href="{{route('postContent' ,  $randPost->slug )}}">{{$randPost->title}}</a></h3>
 							<ul class="post-meta">
 								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
+								<li>{{$randPost->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
 					</div>
+					@endforeach
 					<!-- /post -->
 				</div>
 			</div>
@@ -178,54 +183,19 @@
 						<div class="section-title">
 							<h2 class="title">Popular Posts</h2>
 						</div>
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-3.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
 
 						<!-- post -->
+						@foreach($randomPopularPosts as $post)
 						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-2.jpg')}}" alt=""></a>
+							<a class="post-img" href="{{route('postContent' ,  $post->slug )}}"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
 							<div class="post-body">
 								<div class="post-category">
-									<a href="category.html">Technology</a>
-									<a href="category.html">Lifestyle</a>
+									<a href="category.html">{{$post->category->name}}</a>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
+								<h3 class="post-title"><a href="{{route('postContent' ,  $post->slug )}}">{{$post->title}}</a></h3>
 							</div>
 						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-4.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-5.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-							</div>
-						</div>
+						@endforeach
 						<!-- /post -->
 					</div>
 					<!-- /post widget -->

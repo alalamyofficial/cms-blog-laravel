@@ -92,8 +92,8 @@
 
 
 						<li><a href="{{route('listBlog')}}">Post Lists</a></li>
-						<li><a href="#">Health</a></li>
-						<li><a href="#">Travel</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">About</a></li>
 					</ul>
 					<!-- /nav -->
 				</div>
@@ -271,54 +271,19 @@
 						<div class="section-title">
 							<h2 class="title">Popular Posts</h2>
 						</div>
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-3.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
 
 						<!-- post -->
+						@foreach($randomPopularPosts as $post)
 						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-2.jpg')}}" alt=""></a>
+							<a class="post-img" href="{{route('postContent' ,  $post->slug )}}"><img src="{{asset($post->image)}}" alt="{{$post->title}}"></a>
 							<div class="post-body">
 								<div class="post-category">
-									<a href="category.html">Technology</a>
-									<a href="category.html">Lifestyle</a>
+									<a href="category.html">{{$post->category->name}}</a>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
+								<h3 class="post-title"><a href="{{route('postContent' ,  $post->slug )}}">{{$post->title}}</a></h3>
 							</div>
 						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-4.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="{{asset('frontend/img/widget-5.jpg')}}" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-							</div>
-						</div>
+						@endforeach
 						<!-- /post -->
 					</div>
 					<!-- /post widget -->
@@ -422,7 +387,7 @@
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="contact.html">Contacts</a></li>
 						<li><a href="#">Advertise</a></li>
-						<li><a href="#">Privacy</a></li>
+						<li><a href="{{route('login')}}">login</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-md-pull-6">

@@ -17,8 +17,19 @@ class BlogController extends Controller
         // $data_category = $categories->lateset()->take(5)->get(); or
         $data_tags = $tags->orderBy('created_at','desc')->take(5)->get();
 
+        $randomPost1 = Post::inRandomOrder()->limit(1)->get();
+        $randomPost2 = Post::inRandomOrder()->limit(1)->get();
+        $randomPost3 = Post::inRandomOrder()->limit(1)->get();
 
-        return view('blog')->with('data',$data)->with('data_category',$data_category)->with('data_tags',$data_tags);
+        $randomPopularPosts = Post::inRandomOrder()->limit(5)->get();
+
+        return view('blog')->with('data',$data)
+        ->with('data_category',$data_category)->with('data_tags',$data_tags)
+        ->with('randomPost1',$randomPost1)
+        ->with('randomPost2',$randomPost2)
+        ->with('randomPost3',$randomPost3)
+        ->with('randomPopularPosts',$randomPopularPosts);
+
 
     }
 
@@ -28,10 +39,12 @@ class BlogController extends Controller
         $data_category = $categories->orderBy('created_at','desc')->get();
         $data_tags = $tags->orderBy('created_at','desc')->get();
         $data_posts = $posts->orderBy('created_at','desc')->get();
+        $randomPopularPosts = Post::inRandomOrder()->limit(5)->get();
 
 
         return view('blog.content_post')->with('data_category',$data_category)->with('data_tags',$data_tags)
-        ->with('slug',$slug)->with('data',$data)->with('data_posts',$data_posts);
+        ->with('slug',$slug)->with('data',$data)->with('data_posts',$data_posts)
+        ->with('randomPopularPosts',$randomPopularPosts);
 
 
     }
@@ -44,8 +57,13 @@ class BlogController extends Controller
         $data_tags = $tags->orderBy('created_at','desc')->get();
 
     	$data = Post::latest()->paginate(5);
+        $randomPopularPosts = Post::inRandomOrder()->limit(5)->get();
+
         return view('blog.list_post')->with('data',$data)->with('category_widget',$category_widget)
-        ->with('data_category',$data_category)->with('data_tags',$data_tags);
+        ->with('data_category',$data_category)->with('data_tags',$data_tags)
+        ->with('randomPopularPosts',$randomPopularPosts);
+
+
 
     }
 
@@ -85,7 +103,7 @@ class BlogController extends Controller
     }
 
     public function getRandomPost(){
-        $post = Post::inRandomOrder()->first();
+        $randomPost = Post::inRandomOrder()->first();
         return redirect()->route('posts.show', ["id" => $post->id]);
     }
 

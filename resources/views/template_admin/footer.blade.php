@@ -54,11 +54,23 @@
   <script src="{{asset('assets/js/scripts.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
 
-  {{-- <script type="text/javascript">
+  <!-- {{-- <script type="text/javascript">
     $(document).ready(function() {
         $('select').select2();
     });
-  </script> --}}
+  </script> --}} -->
+
+  <script>
+
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
 
   <!-- Page Specific JS File -->
 </body>

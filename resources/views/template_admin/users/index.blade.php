@@ -15,6 +15,8 @@
               <th scope="col">Email</th>
               <th scope="col">Type</th>
               <th scope="col">Created At</th>
+              <th scope="col">Status</th>
+              <th scope="col">Last Seen</th>
               <th scope="col">Action</th>
             </tr>
         </thead>
@@ -44,6 +46,22 @@
 
                     </td>
                     <td>{{$user->created_at->diffForHumans()}}</td>
+
+                    <td>
+                    
+                        @if(Cache::has('user-is-online-' . $user->id))
+                            <span class="text-success">Online</span>
+                        @else
+                            <span class="text-secondary">Offline</span>
+                        @endif
+
+                    </td>
+                    <td>
+                    
+                         {{ \Carbon\Carbon::parse($user->last_seen)->diffForHumans() }}
+                    
+                    </td>
+
                     <td class="d-flex justify-content-around ">
 
                         <form action="{{route('user.destroy' , $user->id) }}" method="POST">

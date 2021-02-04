@@ -107,8 +107,8 @@
 
 
 						<li><a href="{{route('listBlog')}}">Post Lists</a></li>
-						<li><a href="#">Health</a></li>
-						<li><a href="#">Travel</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">About</a></li>
 					</ul>
 					<!-- /nav -->
 				</div>
@@ -130,7 +130,7 @@
 					</li>
 					<li><a href="about.html">About Us</a></li>
 					<li><a href="contact.html">Contacts</a></li>
-					<li><a href="#">Advertise</a></li>
+					<li><a href="{{route('login')}}">Login</a></li>
 				</ul>
 				<button class="nav-close nav-aside-close"><span></span></button>
 			</div>

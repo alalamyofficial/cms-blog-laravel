@@ -9,6 +9,11 @@
 				<div class="col-md-8">
 
                     @foreach($data as $post)
+					@if (!$data->count())
+						
+						<p>No Result Found</p>
+
+					@endif
 					<!-- post -->
 					<div class="post post-row" style="left:-50px">
 						<a class="post-img" href="{{route('postContent' ,  $post->slug )}}"><img src="{{ asset($post->image)}}" alt="{{$post->title}}"></a>
